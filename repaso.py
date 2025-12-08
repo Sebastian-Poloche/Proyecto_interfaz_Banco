@@ -4,8 +4,24 @@ lista_usuarios = {
     'german_..': {'nombre': 'german', 'tipo': 'usuario', 'cedula': '2345'}
 }
 
+def depositar_dinero():
+    dinero_para_depositar = input("Cuanto dinero deseas ingresar\n>>> ")
+    if dinero_para_depositar <= "1000":
+        print("Nose puede ingresar tan poco dinero")
+    else:
+        print("Dinero depositado exitosamente")
+
+
 def servicios(usuario_ingresado):
-    print(f"Bienvenido a tu cuenta {usuario_ingresado}")
+    print(f"\nBienvenido a tu cuenta {usuario_ingresado}")
+    numero_servicios = input("\n1)Depositar Dinero\n2)Retirar Dinero\n3)Consultar Saldo\n>>> ")
+
+    for i in range(1):
+        if numero_servicios == "1": depositar_dinero()
+        elif numero_servicios == "2": print("Hola puedes retirar dinero")
+        elif numero_servicios == "3": print("Hola puedes consultar tu saldo")
+        else: print("Valor incorrecto")
+
 
 
 def validador(usuario):
@@ -18,6 +34,7 @@ def validador(usuario):
         if contraseña in usuario:
             datos = usuario[contraseña]
             print(f"Hola bienvenido {datos['tipo']} {datos['nombre']}")
+            servicios(datos)
             break
         else:
             intentos += 1
