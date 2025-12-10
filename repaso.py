@@ -5,11 +5,18 @@ lista_usuarios = {
 }
 
 def depositar_dinero():
-    dinero_para_depositar = input("Cuanto dinero deseas ingresar\n>>> ")
+    dinero_para_depositar = input("Cuanto dinero deseas depositar\n>>> ")
     if dinero_para_depositar <= "1000":
-        print("Nose puede ingresar tan poco dinero")
+        print("Nose puede depositar tan poco dinero")
     else:
         print("Dinero depositado exitosamente")
+
+def retirar_dinero():
+    dinero_para_retirar = input("Cuanto dinero deseas retirar\n>>> ")
+    if dinero_para_retirar <= "1000":
+        print("Nose puede retirar tan poco dinero")
+    else:
+        print("Dinero retirado exitosamente")
 
 
 def servicios(usuario_ingresado):
@@ -18,7 +25,7 @@ def servicios(usuario_ingresado):
 
     for i in range(1):
         if numero_servicios == "1": depositar_dinero()
-        elif numero_servicios == "2": print("Hola puedes retirar dinero")
+        elif numero_servicios == "2": retirar_dinero()
         elif numero_servicios == "3": print("Hola puedes consultar tu saldo")
         else: print("Valor incorrecto")
 
